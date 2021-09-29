@@ -38,7 +38,7 @@ public class BookstoreApplication {
 			bookrepository.save(new Book("kanaruokien kokkikirja", "iso kana", 2025, "sad1238a", 13.99,
 					categoryrepository.findByName("Cooking").get(0)));
 			bookrepository.save(new Book("Aakkoset aikuisille", "Varjo G", 2010, "sasd1235a", 19.99,
-					categoryrepository.findByName("Cooking").get(0)));
+					categoryrepository.findByName("Fantasy").get(0)));
 
 			log.info("fetch all books");
 			for (Book book : bookrepository.findAll()) {
