@@ -7,6 +7,10 @@ xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymelea
 <title>Server Programming</title>
 </head>
 <body>
+<form th:action="@{/logout}" method="post">
+ <input type="submit" value="Sign Out"/>
+</form>
+<h2 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h2>
 <table class="table table-striped">
 <tr>
 <th>Author</th>
@@ -24,7 +28,7 @@ xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymelea
 <td th:text="${book.category.name}"></td>
 <td th:text="${book.price}"></td>
 <td><a th:href="@{/edit/{id}(id=${book.id})}" class="btn btn-primary">Edit</a></td>
-<td><a th:href="@{/delete/{id}(id=${book.id})}" class="btn btn-danger">Delete</a></td>
+<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/delete/{id}(id=${book.id})}" class="btn btn-danger">Delete</a></td>
 </tr>
 </table>
 <a href="/add" class="btn btn-success">Add Book</a>
