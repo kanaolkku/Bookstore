@@ -8,7 +8,7 @@ xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymelea
 </head>
 <body>
 <form th:action="@{/logout}" method="post">
- <input type="submit" value="Sign Out"/>
+ <input type="submit" value="Log out"/>
 </form>
 <h2 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h2>
 <table class="table table-striped">

@@ -17,8 +17,8 @@ import com.example.bookstore.web.UserDetailServiceImpl;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/", "/resources/**", "/api/**").permitAll().anyRequest().authenticated()
-				.and().formLogin().loginPage("/login").defaultSuccessUrl("/booklist", true).permitAll().and().logout()
+		http.authorizeRequests().antMatchers("/", "/css/**", "/api/**").permitAll().anyRequest().authenticated().and()
+				.formLogin().loginPage("/login").defaultSuccessUrl("/booklist", true).permitAll().and().logout()
 				.permitAll();
 	}
 
