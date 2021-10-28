@@ -30,6 +30,7 @@ public class BookstoreApplication {
 			// delete existing entries
 			bookrepository.deleteAll();
 			categoryrepository.deleteAll();
+			userrepository.deleteAll();
 
 			log.info("adding categories");
 			// add categories
