@@ -24,7 +24,7 @@ public class BookController {
 		return "index";
 	}
 
-	@GetMapping("/booklist")
+	@GetMapping({ "/booklist", "/" })
 	public String booklist(Model model) {
 		model.addAttribute("books", bookrepository.findAll());
 		return "booklist";
